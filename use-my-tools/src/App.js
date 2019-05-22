@@ -22,7 +22,25 @@ class App extends Component{
 	}
 render(){
   return(
-    
+    <div className="app">
+
+{!this.props.loggingIn && (
+						<div className="nav-link">
+							<NavLink className="NavLink" to="/login">
+								Login
+							</NavLink>
+							<NavLink className="NavLink" to="/register">
+								Register
+							</NavLink>
+							
+						</div>
+          )}
+          <button className={this.props.loggingIn ? 'loginOutBtn' : 'displayNone'} onClick={this.logOut}>
+						Log out
+					</button>
+<Route path="/register" component={Register} />
+<Route path ="/login" component ={Login}/>
+    </div>
   )
 }
 }
